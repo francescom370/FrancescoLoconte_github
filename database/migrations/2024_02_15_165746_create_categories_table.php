@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Category;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -13,9 +14,15 @@ return new class extends Migration
     {
         Schema::create('categories', function (Blueprint $table) {
             $table->id();
-            $table->
+            $table->string("name");
             $table->timestamps();
         });
+
+        $categories = ['Smartphone', 'Accessori', 'Computer', 'Audio', 'Gaming', 'Stampanti', 'Droni', 'Componenti', 'Console', 'Tv'];
+        foreach ($categories as $category){
+            Category::create(['name'=>$category]);
+        }
+
     }
 
     /**
