@@ -8,5 +8,9 @@ class AnnouncementController extends Controller
 {
     public function __construct(){
         return $this->middleware('auth');
+    } 
+
+    public function createAnnouncement(){
+        return view('announcement.create');
     }
 }

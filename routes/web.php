@@ -20,4 +20,4 @@ Route::get('/', function () {
 })->name('welcome');
 
 //* rotta per gli annunci
-Route::get('/nuono/annuncio',[AnnouncementController::class,'createAnnouncement'])->name('announcement.create');
+Route::get('/nuovo/annuncio',[AnnouncementController::class,'createAnnouncement'])->name('announcement.create');
