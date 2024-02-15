@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\AnnouncementController;
+
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,4 +17,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('welcome');
+
+//* rotta per gli annunci
+Route::get('/nuono/annuncio',[AnnouncementController::class,'createAnnouncement'])->name('announcement.create');
