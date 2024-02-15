@@ -32,6 +32,18 @@
         @enderror
     </div>
 
+    <div class="mb-3">
+    <select wire:model.defer="category" class="form-select" aria-label="Default select example">
+        <option value="" selected>Scegli la tua categoria</option>
+        @foreach ($categories as $category)
+        <option value="{{$category->id}}">{{$category->name}}</option>
+        <@endforeach
+    </select>
+    </div>
+    
+
+
+
     <button type="submit" class="btn btn-primary">Submit</button>
 </form>
 </div>

@@ -3,11 +3,13 @@
 namespace App\Livewire;
 
 use Livewire\Component;
+use App\Models\Category;
 use App\Models\Announcement;
 use Livewire\Attributes\Validate;
 
 class CreateAnnouncement extends Component
 {
+    public $category;
     // #[Validate]
     public $title = '';
     // #[Validate]
@@ -15,13 +17,14 @@ class CreateAnnouncement extends Component
     // #[Validate] 
     public $description = '';
 
-    // protected $rules = 
-    // [
-    //     'title'=> "required|min:4",
-    //     'price'=> "required|numeric",
-    //     'description'=> "required|min:4",
+    protected $rules = 
+    [
+        'title'=> "required|min:4",
+        'price'=> "required|numeric",
+        'description'=> "required|min:4",
+        'category'=>"required",
 
-    // ];
+    ];
 
     // public function save()
     // {
@@ -40,12 +43,12 @@ class CreateAnnouncement extends Component
     
     public function store()
     {
-        Announcement::create([
+        $category= Category::find($this->category);
+        $category->announcements()->create([
             'title'=>$this->title,
             'price'=>$this->price,
             'description'=>$this->description,
         ]);
-        // return redirect(route('welcome'));
         $this->cleanForm();
         return redirect(route("announcement.create"))->with('message', 'Annuncio creato con successo!');
     }
