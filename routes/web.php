@@ -1,7 +1,7 @@
 <?php
 
 use App\Http\Controllers\AnnouncementController;
-
+use App\Http\Controllers\FrontController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,9 +15,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-})->name('welcome');
+Route::get('/',[FrontController::class, 'welcome'])->name('welcome');
 
 //* rotta per gli annunci
 Route::get('/nuovo/annuncio',[AnnouncementController::class,'createAnnouncement'])->name('announcement.create');
