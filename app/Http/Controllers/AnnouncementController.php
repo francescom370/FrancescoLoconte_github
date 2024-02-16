@@ -19,5 +19,17 @@ class AnnouncementController extends Controller
     {
         return view('announcement.show', compact('announcement'));
     }
-   
+
+    // public function indexAnnouncement(){
+    //     $announcements = Announcement::all();
+    //     return view('announcement.index', compact('announcements'));
+    // }
+
+    public function indexAnnouncement(){
+        $announcements = Announcement::paginate(6);
+        return view('announcement.index', compact('announcements'));
+    }
+
+
+  
 }

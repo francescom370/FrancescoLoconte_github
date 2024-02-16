@@ -9,6 +9,9 @@
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="{{route('welcome')}}">Home</a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="{{route('announcement.index')}}">Annunci</a>
+        </li>
         <li class="nav-item-dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="categoriesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="fasle">Categorie</a>
          <ul class="dropdown-menu" area-labelledby="categoriesDropdown">
@@ -26,11 +29,12 @@
           <a class="nav-link" href="{{route('login')}}">Accedi</a>
         </li>
             @else
+            <a class="nav-link active" aria-current="page" href="{{route('announcement.create')}}">Inserisci annuncio</a>
             <div class="d-flex">
               <li class="nav-item">
                 <a class="nav-link" href="">Benvenuto: <i class="bi bi-person-fill fs-6"></i>{{Auth::user()->name}}</a>
               </li>
-              <a class="nav-link active" aria-current="page" href="{{route('announcement.create')}}">Inserisci annuncio</a>
+             
               <form action="{{route('logout')}}" method="POST">
                 @csrf
                 <button class="btn btn-danger">Esci

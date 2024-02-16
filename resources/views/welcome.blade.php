@@ -20,16 +20,17 @@
                             @if ($announcement->category)
                                 {{ $announcement->category->name }}
                             @else
-                                Categoria non disponibile
+                               <h2> Categoria non disponibile</h2>
                             @endif
                         </p>
                         <p class="card-text">{{$announcement->created_at->format('d/m/Y')}}</p>
                         <a href="#" class="btn btn-primary">Go somewhere</a>
-                        <a href="{{ route('announcement.show', $announcement) }}" class="btn btn-warning">Visualizza</a>
+                        <a href="{{route('announcement.show', compact('announcement'))}}" class="btn btn-warning">Visualizza</a>
                     </div>
                 </div>
             </div>
         @endforeach
+       
         </div>
     </div>
 </x-layout>
