@@ -23,4 +23,4 @@ Route::get('/nuovo/annuncio',[AnnouncementController::class,'createAnnouncement'
 // rotta per lo show delle categorie
 Route::get('/categoria/{category}', [FrontController::class, 'categoryShow'])->name('categoryShow');
 //rotta per il dettaglio dell annuncio card
-Route::get('/dettaglio/annuncio/{announcement}',[AnnouncementController::class, 'showAnnouncement'])->name('announcements.show');
+Route::get('/dettaglio/annuncio/{announcement}',[AnnouncementController::class, 'showAnnouncement'])->name('announcement.show');

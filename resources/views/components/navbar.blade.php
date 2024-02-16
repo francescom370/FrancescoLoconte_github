@@ -12,7 +12,7 @@
         <li class="nav-item-dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="categoriesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="fasle">Categorie</a>
          <ul class="dropdown-menu" area-labelledby="categoriesDropdown">
-          @foreach($categories as $category)
+          @foreach ($categories as $category)
           <li><a href="{{route('categoryShow', compact('category'))}}" class="dropdown-item">{{($category->name)}}</a></li>
           <li><hr class="dropdown-divider"></li>
           @endforeach
