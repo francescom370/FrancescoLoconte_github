@@ -1,6 +1,5 @@
 <x-layout>
  <h1 class="text-center">Ciao </h1>
-
     <form action="{{route('announcement.create')}}"  method="GET">
      @csrf
         <button class="btn btn-danger">Inserisci Articolo
@@ -18,7 +17,7 @@
                         <p class="card-text">{{$annoucement->description}}</p>
                         <p class="card-text">{{$annoucement->price}}</p>
                         <p class="card-text">{{$annoucement->category->name}}</a>
-                        <a href="" class="card-text btn btn-danger">{{$annoucement->created_at->format('d/m/Y')}}</p>
+                        <p class="card-text">{{$annoucement->created_at->format('d/m/Y')}}</p>
                         <a href="#" class="btn btn-primary">Go somewhere</a>
                         <a href="" class="btn btn-warning">Visualizza</a>
                     </div>
@@ -27,6 +26,4 @@
             @endforeach
         </div>
     </div>
-
-
 </x-layout>
