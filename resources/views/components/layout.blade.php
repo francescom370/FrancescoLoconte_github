@@ -14,8 +14,8 @@
 <body>
 
     <x-navbar></x-navbar>
-
-    
+   
+    <x-header></x-header>
 
         {{$slot}}
 
