@@ -1,11 +1,14 @@
 <x-layout>
- <h1 class="text-center">Ciao </h1>
-    <form action="{{route('announcement.create')}}"  method="GET">
-     @csrf
-        <button class="btn btn-danger">Inserisci Articolo
-        <i class="bi bi-box-arrow-right"></i>
-        </button>
-    </form>
+ <h1 class="text-center my-5 ">Ciao </h1>
+ <div class="d-flex justify-content-center">
+     <form action="{{route('announcement.create')}}"  method="GET">
+      @csrf
+         <button class="btn btn-danger">Inserisci Articolo
+        
+         </button>
+     </form>
+
+ </div>
     <div class="container">
         <div class="row">
         @foreach ($announcements as $announcement)

@@ -12,10 +12,16 @@
     <title>Presto.it</title>
 </head>
 <body>
+
     <x-navbar></x-navbar>
+
     
 
-    {{$slot}}
+        {{$slot}}
+
+    
+
+   
 
 
     <x-footer></x-footer>
