@@ -28,13 +28,14 @@ class CreateAnnouncement extends Component
 
 
     protected $messages=[
-        'title.required'=>'Il campo è obbligatorio',
+        'required'=>'il campo :attribute è obbligatorio',
+        // 'title.required'=>'Il campo è obbligatorio',
         'title.min'=>'Inserire piu di 4 caratteri',
-        'price.required'=>'Il campo è obbligatorio',
+        // 'price.required'=>'Il campo è obbligatorio',
         'price.numeric'=>'Inserisci un importo valido',
-        'description.required'=>'Il campo è obbligatorio',
+        // 'description.required'=>'Il campo è obbligatorio',
         'description.min'=>'Inserire piu di 4 caratteri',
-        'category.required'=>'Il campo è obbligatorio',
+        // 'category.required'=>'Il campo è obbligatorio',
     ];
 
 
@@ -42,37 +43,38 @@ class CreateAnnouncement extends Component
         $this->validateOnly($propertyName);
     }
     
-    public function store()
-    {
-        $category= Category::find($this->category);
-        $category->announcements()->create([
-            'title'=>$this->title,
-            'price'=>$this->price,
-            'description'=>$this->description,
-        ]);
-        $this->cleanForm();
-        return redirect(route("announcement.create"))->with('message', 'Annuncio creato con successo!');
-    }
+    // public function store()
+    // {
+    //     $category= Category::find($this->category);
+    //     $category->announcements()->create([
+    //         'title'=>$this->title,
+    //         'price'=>$this->price,
+    //         'description'=>$this->description,
+    //     ]);
+    //     $this->cleanForm();
+    //     return redirect(route("announcement.create"))->with('message', 'Annuncio creato con successo!');
+    // }
     
-//     public function store()
-// {
-//     $category = Category::find($this->category);
+    public function store()
+{
+    $this->validate();
+    $category = Category::find($this->category);
     
    
-//     if ($category) {
-//         $category->announcements()->create([
-//             'title' => $this->title,
-//             'price' => $this->price,
-//             'description' => $this->description,
-//         ]);
+    if ($category) {
+        $category->announcements()->create([
+            'title' => $this->title,
+            'price' => $this->price,
+            'description' => $this->description,
+        ]);
         
-//         $this->cleanForm();
-//         return redirect(route("announcement.create"))->with('message', 'Annuncio creato con successo!');
-//     } else {
+        $this->cleanForm();
+        return redirect(route("announcement.create"))->with('message', 'Annuncio creato con successo!');
+    } else {
        
-//         return redirect()->back()->with('error', 'Categoria non valida!');
-//     }
-// }
+        return redirect()->back()->with('error', 'Categoria non valida!');
+    }
+}
 
 
     public function cleanForm(){

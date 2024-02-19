@@ -38,10 +38,10 @@
         @foreach ($categories as $category)
         <option value="{{$category->id}}">{{$category->name}}</option>
         @endforeach
-        @error('category')
-        {{$message}}
-        @enderror
     </select>
+    @error('category')
+    {{$message}}
+    @enderror
     </div>
     
 

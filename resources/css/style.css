@@ -1,0 +1,36 @@
+body{
+    background-color:whitesmoke;
+
+}
+
+:root{
+    --color-P:#2c709f;
+    --color-S:darkblue;
+    --color-A:whitesmoke;
+}
+
+.color-P{
+    color: var(--color-P);
+}
+
+.color-S{
+    color: var(--color-S);
+}
+
+.color-A{
+    color: var(--color-A);
+}
+
+*{
+    font-family:'Noto Sans';
+}
+
+.font-title{
+    font-family:'Play';
+}
+
+/* NAVBAR */
+.LogoPanda{
+    height: 50px;
+    width: 50px;
+}
