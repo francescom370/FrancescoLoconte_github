@@ -15,7 +15,7 @@
                         <p class="card-text">{{$announcement->category->name}}</p>
                         <p class="card-text">{{$announcement->created_at->format('d/m/Y')}}</p>
                         <a href="#" class="btn btn-primary">Go somewhere</a>
-                        <a href="" class="btn btn-warning">Visualizza</a> 
+                        <a href="{{route('announcement.show', compact('announcement'))}}" class="btn btn-warning">Visualizza</a> 
                     </div>
                 </div>
 

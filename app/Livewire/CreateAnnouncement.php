@@ -23,23 +23,24 @@ class CreateAnnouncement extends Component
         'price'=> "required|numeric",
         'description'=> "required|min:4",
         'category'=>"required",
-
+        
     ];
 
-    // public function save()
-    // {
-    //     $validated = $this->validate([ 
-    //         'title' => 'required|min:3',
-    //         'price' => 'required|min:3',
-    //         'description' => 'required|min:3',
-    //     ]);
- 
-    //     Announcement::create($validated);
- 
-    //     // return redirect()->to('/posts');
-    // }
+
+    protected $messages=[
+        'title.required'=>'Il campo è obbligatorio',
+        'title.min'=>'Inserire piu di 4 caratteri',
+        'price.required'=>'Il campo è obbligatorio',
+        'price.numeric'=>'Inserisci un importo valido',
+        'description.required'=>'Il campo è obbligatorio',
+        'description.min'=>'Inserire piu di 4 caratteri',
+        'category.required'=>'Il campo è obbligatorio',
+    ];
 
 
+    public function updated($propertyName){
+        $this->validateOnly($propertyName);
+    }
     
     public function store()
     {
@@ -53,7 +54,26 @@ class CreateAnnouncement extends Component
         return redirect(route("announcement.create"))->with('message', 'Annuncio creato con successo!');
     }
     
+//     public function store()
+// {
+//     $category = Category::find($this->category);
     
+   
+//     if ($category) {
+//         $category->announcements()->create([
+//             'title' => $this->title,
+//             'price' => $this->price,
+//             'description' => $this->description,
+//         ]);
+        
+//         $this->cleanForm();
+//         return redirect(route("announcement.create"))->with('message', 'Annuncio creato con successo!');
+//     } else {
+       
+//         return redirect()->back()->with('error', 'Categoria non valida!');
+//     }
+// }
+
 
     public function cleanForm(){
         $this->title = "";

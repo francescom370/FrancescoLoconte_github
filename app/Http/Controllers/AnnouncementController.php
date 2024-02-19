@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use App\Models\Announcement;
 use Illuminate\Http\Request;
 
@@ -19,6 +20,7 @@ class AnnouncementController extends Controller
     {
         return view('announcement.show', compact('announcement'));
     }
+
 
     // public function indexAnnouncement(){
     //     $announcements = Announcement::all();
