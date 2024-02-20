@@ -12,14 +12,14 @@
               </form> --}}
         </div>
             <br>
-            @Auth
+          
             <form action="{{route('announcement.create')}}"  method="GET">
                 @csrf
-                <button class="btn-get-started">Inserisci Articolo
+                <button class="btn-get-started">Inserisci Annuncio
                     
                 </button>
             </form>
-            @endAuth
+           
      </div>
 
 

@@ -66,7 +66,7 @@
         <li class="menu__item"><a class="menu__link" href="#">About</a></li>
         <li class="menu__item"><a class="menu__link" href="#">Services</a></li>
         <li class="menu__item"><a class="menu__link" href="#">Team</a></li>
-        <li class="menu__item"><a class="menu__link" href="#">Contact</a></li>
+        <li class="menu__item"><a class="menu__link" href="{{route('revisor.register')}}">Lavora con noi</a></li>
   
       </ul>
       <p>&copy;2024 Codifica Coraggiosa | All Rights Reserved</p>
