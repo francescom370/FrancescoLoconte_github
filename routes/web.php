@@ -42,4 +42,6 @@ Route::patch('/rifiuta/annuncio/{announcement}',[RevisorController::class,'rejec
 Route::post('/richiesta/revisore',[RevisorController::class,'becomeRevisor'])->middleware('auth')->name('become.revisor');
 //?Rotta rendi utente revisore
 Route::get('/rendi/revisore/{user}',[RevisorController::class,'makeRevisor'])->name('make.revisor');
+// rotta per ricerca
+Route::get('/ricerca/annuncio',[FrontController::class,'searchAnnouncements'])->name('announcements.search');
 

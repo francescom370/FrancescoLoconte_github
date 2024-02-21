@@ -35,8 +35,8 @@
         </div>
         
         @if (Auth::user()->is_revisor)
-        <li class="nav-item ms-lg-5 ">
-          <a class="nav-link active ms-lg-5" aria-current="page" href="{{route('revisor.index')}}">Zona revisore <span class="position-absolute top-0 start-100 translate-middle badge-rounded-pill bg-danger">
+        <li class="nav-item">
+          <a class="nav-link active " aria-current="page" href="{{route('revisor.index')}}">Zona revisore <span class="position-absolute top-0 start-100 translate-middle badge-rounded-pill bg-danger">
             {{App\Models\Announcement::toBeRevisionedCount()}}
             <span class="visually-hidden">Messaggi da leggere</span>
           </span>
@@ -45,15 +45,23 @@
       @endif
       
       @endAuth
-      <div class="d-flex ms-lg-2">
-        <form class="form-inline my-2 my-lg-0 mr-auto">
-          
-          <input class="form-control mr-sm-2 " type="search" placeholder="Cerca" aria-label="Cerca">
-          
+
+      {{-- <div class="d-flex ms-lg-2 bg-info">
+        <form class="form-inline my-2 my-lg-0 mr-auto" action="{{route('announcements.search')}}" method="GET">
+          @csrf
+          <input class="form-control mr-sm-2 " type="search" placeholder="Cerca" aria-label="Cerca" name="searched">
+          <button class="btn btn nav-link" type="submit">Cerca</button>
         </form>
-        
-        <button class="btn btn  my-2 my-sm-0 ml-auto ms-lg-1 nav-link" type="submit">Cerca</button>
-      </div>
+      </div> --}}
+      <form class="form-inline my-2 my-lg-0 mr-auto ms-3"  action="{{route('announcements.search')}}" method="GET">
+        @csrf
+        <div class="input-group">
+          <input class="form-control mr-sm-2" type="search" placeholder="Cerca" aria-label="Cerca" name="searched">
+          <button class="btn btn my-2 my-sm-0 ml-2 nav-link" type="submit">Cerca</button>
+        </div>
+      </form>
+    
+      
       
     </ul>
     <ul class="navbar-nav">
