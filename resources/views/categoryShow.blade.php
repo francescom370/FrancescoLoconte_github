@@ -2,7 +2,7 @@
     <div class="container">
         <div class="row">
             <div class="col-12">
-                <h1 class="text-center">Esplora la tua Categoria</h1>
+                <h1 class="text-center display-1 bordi my-5 font-title color-A">Esplora la tua Categoria</h1>
             </div>
         </div>
     </div>
@@ -15,13 +15,14 @@
                         <div class="card" style="width: 18rem;">
                             <img src="https://picsum.photos/200" class="card-img-top" alt="...">
                             <div class="card-body">
-                                <h5 class="card-title">{{$announcement->title}}</h5>
-                                <p class="card-text">{{$announcement->description}}</p>
-                                <p class="card-text">{{$announcement->price}}</p>
-                                <p class="card-text">{{$announcement->category->name}}</p>
-                                <p class="card-text">{{$announcement->created_at->format('d/m/Y')}}</p>
-                                <a href="#" class="btn btn-primary">Go somewhere</a>
-                                <a href="{{route('announcement.show', compact('announcement'))}}" class="btn btn-warning">Visualizza</a> 
+                                <h5 class="card-title font-title fs-3 bordi">{{$announcement->title}}</h5>
+                                <p class="card-text"><span class="fs-5 color-A">Descrizione:</span> {{$announcement->description}}</p>
+                                <p class="card-text"><span class="fs-5 color-A">Prezzo:</span> {{$announcement->price}}€</p>
+                                <p class="card-text"><span class="fs-5 color-A">Categoria:</span> {{$announcement->category->name}}</p>
+                                <p class="card-text"><span class="fs-5 color-A">Data di crezione:</span> {{$announcement->created_at->format('d/m/Y')}}</p>
+                              <div class="d-flex justify-content-center">
+                                <a href="{{route('announcement.show', compact('announcement'))}}" class="btn btn-warning">Visualizza</a>
+                              </div>
                             </div>
                         </div>
                     </div>

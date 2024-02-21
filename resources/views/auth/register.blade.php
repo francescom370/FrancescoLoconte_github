@@ -2,9 +2,34 @@
     <div class="container">
         <div class="row">
                 <div class="col-12">
-                        <h1 class="display-1 text-center text-danger">Registrati</h1>
+                        <h1 class="text-center display-1 bordi my-5 font-title color-A">Registrati</h1>
                 </div>
-                <form action="{{route('register')}}" method="POST">
+           
+        </div>
+</div>
+                        <form action="{{route('register')}}" method="POST">
+                        @csrf
+                        <div class="contenitore-form-reg">
+                                <div class="container-reg">
+                                        <div><img class="brand-logo" src="{{ asset('storage/img/imgnav.png') }}" alt="Logo"></div>
+                                        <div class="brand-title font-title">Presto.it</div>
+                                        <div class="inputs-reg">
+                                                <label class="my-2 lable-reg font-title">Nome & Cognome</label>
+                                                <input class="input-reg" type="text" name="name" placeholder="Mario Rossi" />
+                                                <label class="my-2 lable-reg font-title">Email</label>
+                                                <input class="input-reg" type="email" name="email" placeholder="mariorossi@presto.it" />
+                                                <label class="my-2 lable-reg font-title">Password</label>
+                                                <input class="input-reg" type="password" name="password" placeholder="Min 8 caratteri" />
+                                                <label class="my-2 lable-reg font-title">Conferma Password</label>
+                                                <input class="input-reg" type="password" name="password_confirmation" placeholder="Min 8 caratteri" />
+                                                <button class="button-reg font-title" type="submit">REGISTRATI</button>
+                                        </div>
+                                </div>
+                        </div>
+                        </form>
+</x-layout>
+
+     <!-- <form action="{{route('register')}}" method="POST">
                         @csrf
                         <div class="mb-3">
                                 <label for="exampleInputEmail1" class="form-label">Nome e cognome</label>
@@ -29,10 +54,4 @@
                         </div>
                         
                         <button type="submit" class="btn btn-primary">Registrati</button>
-                </form>
-        </div>
-</div>
-
-
-
-</x-layout>
+                </form> -->

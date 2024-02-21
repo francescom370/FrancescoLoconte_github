@@ -3,7 +3,7 @@
   
   <div class="container-fluid">
     
-    <a class="navbar-brand ms-2 " href="{{route('welcome')}}"><img class="imgnav" src="{{ asset('storage/img/imgnav.png') }}" alt=""></a>
+    <a class="navbar-brand ms-2 " href="{{route('welcome')}}"><img class="imgnav" src="{{ asset('storage/img/imgnav.png') }}" alt="Logo"></a>
     <a class="navbar-brand ms-2 font-title nav-link" href="{{route('welcome')}}">Presto.it</a>
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -56,7 +56,7 @@
       <form class="form-inline my-2 my-lg-0 mr-auto ms-3"  action="{{route('announcements.search')}}" method="GET">
         @csrf
         <div class="input-group">
-          <input class="form-control mr-sm-2" type="search" placeholder="Cerca" aria-label="Cerca" name="searched">
+          <input class="form-control mr-sm-2 inputnav" type="search" placeholder="Cerca" aria-label="Cerca" name="searched">
           <button class="btn btn my-2 my-sm-0 ml-2 nav-link" type="submit">Cerca</button>
         </div>
       </form>

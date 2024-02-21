@@ -1,16 +1,17 @@
-<!-- <x-layout>
+<x-layout>
     <div class="container my-5">
         <div class="row">
             <div class="col-12">
-                <h1 class="text-center my-5">Annuncio: {{$announcement->title}}</h1>
+                <h1 class="text-center display-1 bordi my-5 font-title color-A">Annuncio: {{$announcement->title}}</h1>
             </div>
         </div>
     </div>
+
     <div class="container">
         <div class="row">
-            <div class="col-12 d-flex justify-content-center align-items-center ">
+            <div class="col-8 d-flex justify-content-center align-items-center ">
                
-                <div class="card " style="width: 20rem;">
+                <div class="card " style="width: 35rem;">
                     <div id="carouselExample" class="carousel slide">
                         <div class="carousel-inner">
                             <div class="carousel-item active">
@@ -32,16 +33,23 @@
                             <span class="visually-hidden">Next</span>
                         </button>
                     </div>
-                    <div class="card-body">
-                        <h5 class="card-title">{{$announcement->title}}</h5>
-                        <p class="card-text">Descrizione: {{$announcement->description}}</p>
-                        <p class="card-text">Prezzo :{{$announcement->price}}€</p>
-                    </div>
                   </div>
+            </div>
+            <div class="col-4"><div class="card" style="width: 30rem;">
+                    <div class="card-body">
+                        <h5 class="card-title font-title fs-3 bordi">{{$announcement->title}}</h5>
+                        <p class="card-text"><span class="fs-5 color-A">Descrizione:</span> {{$announcement->description}}</p>
+                        <p class="card-text"><span class="fs-5 color-A">Prezzo:</span> {{$announcement->price}}€</p>
+                        <p class="card-text"><span class="fs-5 color-A">Categoria:</span> {{$announcement->category->name}}</p>
+                        <p class="card-text"><span class="fs-5 color-A">Data di crezione:</span> {{$announcement->created_at->format('d/m/Y')}}</p>
+                        <p class="card-text"><span class="fs-5 color-A">Venditore:</span> {{Auth::user()->name}}</p>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 </x-layout>
- -->
 
 
+
+                    

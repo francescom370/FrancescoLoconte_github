@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 class AnnouncementController extends Controller
 {
     public function __construct(){
-        return $this->middleware('auth');
+        return $this->middleware('auth')->except('indexAnnouncement','showAnnouncement');
     } 
 
     public function createAnnouncement(){
@@ -33,6 +33,5 @@ class AnnouncementController extends Controller
     }
 
     
-  
-  
+    
 }

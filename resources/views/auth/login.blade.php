@@ -1,31 +1,27 @@
-
-    <x-layout>
+<x-layout>
         <div class="container">
                 <div class="row">
                         <div class="col-12">
-                                <h1 class="display-1 text-center text-danger">Accedi</h1>
-                        </div>
-                        <form action="{{route('login')}}" method="POST">
-                                @csrf
-                              
-
-                                <div class="mb-3">
-                                        <label for="exampleInputEmail1" class="form-label">Indirizzo Mail</label>
-                                        <input type="email" class="form-control"  aria-describedby="emailHelp" name="email">
-                                        
-                                </div>
-                                
-                                <div class="mb-3">
-                                        <label for="exampleInputPassword1" class="form-label">Password</label>
-                                        <input type="password" class="form-control" name="password"> 
-                                </div>
-
-                            
-                                
-                                <button type="submit" class="btn btn-primary">Accedi</button>
-                        </form>
+                                <h1 class="text-center display-1 bordi my-5 font-title color-A">Accedi</h1>
+                        </div>   
                 </div>
         </div>
+        <form action="{{route('login')}}" method="POST">
+                        @csrf
+                        <div class="contenitore-form-reg">
+                                <div class="container-log">
+                                        <div><img class="brand-logo" src="{{ asset('storage/img/imgnav.png') }}" alt="Logo"></div>
+                                        <div class="brand-title font-title">Presto.it</div>
+                                        <div class="inputs-log">
+                                                <label class="my-2 lable-log font-title">Email</label>
+                                                <input class="input-log" type="email" name="email" placeholder="Presto@test.com" />
+                                                <label class="my-2 lable-log font-title">Password</label>
+                                                <input class="input-log" type="password" name="password" placeholder="Min 8 caratteri" />
+                                                <button class="button-log font-title" type="submit">LOGIN</button>
+                                        </div>
+                                </div>
+                        </div>
+        </form>
 </x-layout>
 
 
