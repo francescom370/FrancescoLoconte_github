@@ -1,10 +1,17 @@
 <?php
 
+use App\Providers\AppServiceProvider;
+use Illuminate\Support\Facades\Route;
+use App\Providers\AuthServiceProvider;
 use Illuminate\Support\Facades\Facade;
+use App\Providers\EventServiceProvider;
+use App\Providers\RouteServiceProvider;
 use Illuminate\Support\ServiceProvider;
+use App\Providers\FortifyServiceProvider;
+
+
 
 return [
-
     /*
     |--------------------------------------------------------------------------
     | Application Name
@@ -161,15 +168,15 @@ return [
          */
         Laravel\Scout\ScoutServiceProvider::class,
         TeamTNT\Scout\TNTSearchScoutServiceProvider::class,
-        App\Providers\FortifyServiceProvider::class,
+        FortifyServiceProvider::class,
         /*
          * Application Service Providers...
          */
-        App\Providers\AppServiceProvider::class,
-        App\Providers\AuthServiceProvider::class,
+        AppServiceProvider::class,
+        AuthServiceProvider::class,
         // App\Providers\BroadcastServiceProvider::class,
-        App\Providers\EventServiceProvider::class,
-        App\Providers\RouteServiceProvider::class,
+        EventServiceProvider::class,
+        RouteServiceProvider::class,
     ])->toArray(),
 
     /*

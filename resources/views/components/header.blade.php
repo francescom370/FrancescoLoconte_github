@@ -2,7 +2,7 @@
 
     <div class="overlay ">
         <h2 class="t-header my-5">Hi Tech, Hi Fun</h1>
-        <h3 class="h3-header my-5">Scopri i prodotti più innovativi e divertenti sul mercato.</h3>
+        <h3 class="h3-header my-5">{{__('ui.Header')}}</h3>
        
         <div>
             
@@ -15,7 +15,7 @@
           
             <form action="{{route('announcement.create')}}"  method="GET">
                 @csrf
-                <button class="btn-get-started">Inserisci Annuncio</button>
+                <button class="btn-get-started">{{__('ui.Annuncio')}}</button>
             </form>         
      </div>
 </header>

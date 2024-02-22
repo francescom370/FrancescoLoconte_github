@@ -2,7 +2,7 @@
     <div class="container">
         <div class="row">
                 <div class="col-12">
-                        <h1 class="text-center display-1 bordi my-5 font-title color-A">Registrati</h1>
+                        <h1 class="text-center display-1 bordi my-5 font-title color-A">{{__('ui.Registrati')}}</h1>
                 </div>
            
         </div>
@@ -14,15 +14,15 @@
                                         <div><img class="brand-logo" src="{{ asset('storage/img/imgnav.png') }}" alt="Logo"></div>
                                         <div class="brand-title font-title">Presto.it</div>
                                         <div class="inputs-reg">
-                                                <label class="my-2 lable-reg font-title">Nome & Cognome</label>
+                                                <label class="my-2 lable-reg font-title">{{__('ui.Nome')}}</label>
                                                 <input class="input-reg" type="text" name="name" placeholder="Mario Rossi" />
                                                 <label class="my-2 lable-reg font-title">Email</label>
                                                 <input class="input-reg" type="email" name="email" placeholder="mariorossi@presto.it" />
                                                 <label class="my-2 lable-reg font-title">Password</label>
                                                 <input class="input-reg" type="password" name="password" placeholder="Min 8 caratteri" />
-                                                <label class="my-2 lable-reg font-title">Conferma Password</label>
+                                                <label class="my-2 lable-reg font-title">{{__('ui.Conferma')}}</label>
                                                 <input class="input-reg" type="password" name="password_confirmation" placeholder="Min 8 caratteri" />
-                                                <button class="button-reg font-title" type="submit">REGISTRATI</button>
+                                                <button class="button-reg font-title" type="submit">{{__('ui.Registrati')}}</button>
                                         </div>
                                 </div>
                         </div>

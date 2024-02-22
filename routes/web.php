@@ -1,10 +1,12 @@
 <?php
 
-use App\Http\Controllers\AnnouncementController;
+use App\Models\Announcement;
+use Illuminate\Support\Facades\App;
+use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FrontController;
 use App\Http\Controllers\RevisorController;
-use App\Models\Announcement;
-use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AnnouncementController;
+use Livewire\Mechanisms\FrontendAssets\FrontendAssets;
 
 /*
 |--------------------------------------------------------------------------
@@ -41,4 +43,7 @@ Route::post('/richiesta/revisore',[RevisorController::class,'becomeRevisor'])->m
 Route::get('/rendi/revisore/{user}',[RevisorController::class,'makeRevisor'])->name('make.revisor');
 // rotta per ricerca
 Route::get('/ricerca/annuncio',[FrontController::class,'searchAnnouncements'])->name('announcements.search');
+
+//Cambio lingua
+Route::post('/lingua/{lang}', [FrontController::class, 'setLanguage'])->name('setLocale');
 

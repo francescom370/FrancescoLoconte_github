@@ -19,6 +19,7 @@ return new class extends Migration
         });
 
         $categories = ['Smartphone', 'Accessori', 'Computer', 'Audio', 'Gaming', 'Stampanti', 'Droni', 'Componenti', 'Console', 'Tv'];
+        
         foreach ($categories as $category){
             Category::create(['name'=>$category]);
         }

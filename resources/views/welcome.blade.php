@@ -3,7 +3,7 @@
 <div class="container my-5">
     <div class="row">
         <div class="col-12 bordi">
-            <h1 class="display-1 font-title text-center">Benvenuti in Presto.it</h1>
+            <h1 class="display-1 font-title text-center">{{__('ui.Benvenuti')}}</h1>
         </div>
     </div>
 </div>

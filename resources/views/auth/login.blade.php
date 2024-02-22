@@ -2,7 +2,7 @@
         <div class="container">
                 <div class="row">
                         <div class="col-12">
-                                <h1 class="text-center display-1 bordi my-5 font-title color-A">Accedi</h1>
+                                <h1 class="text-center display-1 bordi my-5 font-title color-A">{{__('ui.Accedi')}}</h1>
                         </div>   
                 </div>
         </div>
@@ -17,7 +17,7 @@
                                                 <input class="input-log" type="email" name="email" placeholder="Presto@test.com" />
                                                 <label class="my-2 lable-log font-title">Password</label>
                                                 <input class="input-log" type="password" name="password" placeholder="Min 8 caratteri" />
-                                                <button class="button-log font-title" type="submit">LOGIN</button>
+                                                <button class="button-log font-title" type="submit">{{__('ui.Accedi')}}</button>
                                         </div>
                                 </div>
                         </div>

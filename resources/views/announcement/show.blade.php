@@ -2,7 +2,7 @@
     <div class="container my-5">
         <div class="row">
             <div class="col-12">
-                <h1 class="text-center display-1 bordi my-5 font-title">Annuncio: {{$announcement->title}}</h1>
+                <h1 class="text-center display-1 bordi my-5 font-title">{{__('ui.Ann')}}: {{$announcement->title}}</h1>
             </div>
         </div>
     </div>
@@ -38,11 +38,11 @@
             <div class="col-4"><div class="card" style="width: 30rem;">
                     <div class="card-body">
                         <h5 class="card-title font-title fs-3 bordi">{{$announcement->title}}</h5>
-                        <p class="card-text"><span class="fs-5">Descrizione:</span> {{$announcement->description}}</p>
-                        <p class="card-text"><span class="fs-5">Prezzo:</span> {{$announcement->price}}€</p>
-                        <p class="card-text"><span class="fs-5">Categoria:</span> {{$announcement->category->name}}</p>
-                        <p class="card-text"><span class="fs-5">Data di crezione:</span> {{$announcement->created_at->format('d/m/Y')}}</p>
-                        <p class="card-text"><span class="fs-5">Venditore:</span> {{Auth::user()->name}}</p>
+                        <p class="card-text"><span class="fs-5">{{__('ui.Descrizione')}}:</span> {{$announcement->description}}</p>
+                        <p class="card-text"><span class="fs-5">{{__('ui.Prezzo')}}:</span> {{$announcement->price}}€</p>
+                        <p class="card-text"><span class="fs-5">{{__('ui.Categoria')}}:</span> {{$announcement->category->name}}</p>
+                        <p class="card-text"><span class="fs-5">{{__('ui.Data')}}:</span> {{$announcement->created_at->format('d/m/Y')}}</p>
+                        <!-- <p class="card-text"><span class="fs-5">{{__('ui.Venditore')}}:</span> {{$announcement->name}}</p> -->
                     </div>
                 </div>
             </div>
