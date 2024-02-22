@@ -15,15 +15,7 @@
           
             <form action="{{route('announcement.create')}}"  method="GET">
                 @csrf
-                <button class="btn-get-started">Inserisci Annuncio
-                    
-                </button>
-            </form>
-           
+                <button class="btn-get-started">Inserisci Annuncio</button>
+            </form>         
      </div>
-
-
-
-
-
 </header>

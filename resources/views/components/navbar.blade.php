@@ -49,15 +49,17 @@
       {{-- <div class="d-flex ms-lg-2 bg-info">
         <form class="form-inline my-2 my-lg-0 mr-auto" action="{{route('announcements.search')}}" method="GET">
           @csrf
-          <input class="form-control mr-sm-2 " type="search" placeholder="Cerca" aria-label="Cerca" name="searched">
+          <input class="form-control mr-sm-2" type="search" placeholder="Cerca" aria-label="Cerca" name="searched">
           <button class="btn btn nav-link" type="submit">Cerca</button>
         </form>
       </div> --}}
       <form class="form-inline my-2 my-lg-0 mr-auto ms-3"  action="{{route('announcements.search')}}" method="GET">
         @csrf
         <div class="input-group">
-          <input class="form-control mr-sm-2 inputnav" type="search" placeholder="Cerca" aria-label="Cerca" name="searched">
-          <button class="btn btn my-2 my-sm-0 ml-2 nav-link" type="submit">Cerca</button>
+          <input class="form-control mr-sm-2 inputnav" type="search" placeholder="Cosa stai cercando?" aria-label="Cerca" name="searched">
+          <button class="btn btn my-2 my-sm-0 ml-2 nav-link" type="submit">
+            <i class="bi bi-search"></i>
+          </button>
         </div>
       </form>
     

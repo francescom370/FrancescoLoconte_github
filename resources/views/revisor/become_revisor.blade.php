@@ -2,7 +2,7 @@
     <div class="container">
         <div class="row">
             <div class="col-12">
-                <h1 class="text-center display-1 bordi my-5 font-title color-A">Diventa un revisionatore</h1>
+                <h1 class="text-center display-1 bordi my-5 font-title">Diventa un revisionatore</h1>
                 @if (session()->has('message'))
                 <div class="justify-content-center my-2 alert alert-success text-center">
                 {{ session('message') }}
