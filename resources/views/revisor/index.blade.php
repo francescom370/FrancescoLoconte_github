@@ -8,12 +8,12 @@
 </div>
 
 <div>
-    @if ($announcement_to_check)
+    @if($announcement_to_check)
     <div class="container">
         <div class="row">
             <div class="col-12">
                 <div id="ShowCarousel" class="carousel slide" data-bs-ride="carousel">
-                    @if ($announcement_to_check->images as $image)
+                    @if ($announcement_to_check-> images)
                     <div class="carousel-inner">
                         @foreach ($announcement_to_check->images as $image)
                         <div class="carousel-item @if($loop->first)active @endif">
