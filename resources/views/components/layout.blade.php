@@ -19,7 +19,26 @@
     <x-header></x-header>
 
         {{$slot}}
-
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
     <x-footer></x-footer>
     @livewireScripts
 </body>
