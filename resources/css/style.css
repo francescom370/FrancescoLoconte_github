@@ -492,3 +492,8 @@ header .overlay{
   height: 200px;
   background-size: cover;
 }
+
+.carosellopreview{
+  width:400px;
+  height: 400px;
+}

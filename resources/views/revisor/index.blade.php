@@ -12,7 +12,7 @@
     <div class="container">
         <div class="row">
             <div class="col-12">
-                <div id="ShowCarousel" class="carousel slide" data-bs-ride="carousel">
+                <div id="ShowCarousel" class="carousel slide carosellopreview" data-bs-ride="carousel">
                     @if ($announcement_to_check-> images)
                     <div class="carousel-inner">
                         @foreach ($announcement_to_check->images as $image)
@@ -46,19 +46,20 @@
             </div>
         </div>
     </div>
+</div>
 
 
 
-
-
-    </div>
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+        </div>
     <h5 class="card-title">{{$announcement_to_check->title}}</h5>
     <p class="card-text">Descrizione: {{$announcement_to_check->description}}</p>
     <p class="card-text">Prezzo :{{$announcement_to_check->price}}€</p>
 
 
-</div>
-<div class="row">
+
     <div class="col-12">
         <form action="{{route('revisor.accept_announcement',['announcement'=>$announcement_to_check])}}" method="POST">
             @csrf
@@ -68,17 +69,21 @@
            </button>
         </form>
     </div>
-    <div class="col-12">
+
         <form action="{{route('revisor.reject_announcement',['announcement'=>$announcement_to_check])}}" method="POST">
-            @csrf
-            @method('PATCH')
-           <button type="submit" class="btn btn-primary">
-           Rifiuta
-           </button>
-        </form>
+                        @csrf
+                        @method('PATCH')
+                    <button type="submit" class="btn btn-primary">
+                    Rifiuta
+                    </button>
+                    </form>
+               
+            </div>
+            @endif
+        </div>
     </div>
-</div>
-@endif
+
+    
 
 
 
