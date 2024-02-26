@@ -78,7 +78,13 @@ class CreateAnnouncement extends Component
     // $category = Category::find($this->category);
     
    
-   
+    if ($category) {
+        // $category->announcements()->create([
+        //     'title' => $this->title,
+        //     'price' => $this->price,
+        //     'description' => $this->description,
+        // ]);
+
         $this->announcement = Category::find($this->category)->announcements()->create($this->validate());
         if(count($this->images)){
             foreach($this->images as $image) {
@@ -97,7 +103,7 @@ class CreateAnnouncement extends Component
         $this->announcement->save();
         session() -> flash('message', 'Articolo inserito con successo, sarà pubblicato dopo la reivisione');
         $this->cleanForm();
-
+    }
 }
 
     public function cleanForm(){

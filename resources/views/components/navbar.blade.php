@@ -36,7 +36,7 @@
         
         @if (Auth::user()->is_revisor)
         <li class="nav-item">
-          <a class="nav-link active " aria-current="page" href="{{route('revisor.index')}}">{{__('ui.Revisore')}}<span class="position-absolute top-0 start-100 translate-middle badge-rounded-pill bg-danger">
+          <a class="nav-link active " aria-current="page" href="{{route('revisor.index')}}">{{__('ui.Revisore')}}<span class="position-absolute top-0 start-100 translate-middle badge-rounded-pill bg-danger rounded">
             {{App\Models\Announcement::toBeRevisionedCount()}}
             <span class="visually-hidden">Messaggi da leggere</span>
           </span>

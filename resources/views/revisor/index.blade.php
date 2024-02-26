@@ -1,8 +1,15 @@
 <x-layout>
+<<<<<<< HEAD
 <div class="container my-5">
     <div class="row">
         <div class="col-12 bordi">
             <h1 class="display-1 font-title text-center">{{$announcement_to_check ? 'Ecco l\'annuncio da rivisionare' : 'Non ci sono annunci'}}</h1>
+=======
+<div class="container my-5 bordi">
+    <div class="row">
+        <div class="col-12">
+            <h1 class="display-1 text-center font-title">{{$announcement_to_check ? 'Ecco l\'annuncio da rivisionare' : 'Non ci sono annunci'}}</h1>
+>>>>>>> 7d1dbaa0468bba0e60eecc1677a5c48c70d2777e
         </div>
     </div>
 </div>
