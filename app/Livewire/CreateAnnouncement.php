@@ -80,11 +80,11 @@ class CreateAnnouncement extends Component
     
    
     if ($category) {
-        $category->announcements()->create([
-            'title' => $this->title,
-            'price' => $this->price,
-            'description' => $this->description,
-        ]);
+        // $category->announcements()->create([
+        //     'title' => $this->title,
+        //     'price' => $this->price,
+        //     'description' => $this->description,
+        // ]);
 
         $this->announcement = Category::find($this->category)->announcements()->create($this->validate());
         if(count($this->images)){

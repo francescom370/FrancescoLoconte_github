@@ -1,8 +1,8 @@
 <x-layout>
-<div class="container-fluid p-5 bg-gradient bg-success shadow mb-5">
+<div class="container my-5 bordi">
     <div class="row">
-        <div class="col-12 text-light p-5">
-            <h1 class="display-2">{{$announcement_to_check ? 'ecco l\'annuncio da rivisionare' : 'non ci sono annunci'}}</h1>
+        <div class="col-12">
+            <h1 class="display-1 text-center font-title">{{$announcement_to_check ? 'Ecco l\'annuncio da rivisionare' : 'Non ci sono annunci'}}</h1>
         </div>
     </div>
 </div>
