@@ -58,19 +58,19 @@
     <div class="row">
         <div class="col-12">
             <p>Photo Preview:</p>
-            <div class="row border border-4 border-info roundend shadow py-4">
+            <div class="bordoCustom row border roundend shadow py-4">
                 @foreach ($images as $key => $image)
                 <div class="col-12 my-3"> 
                     <div class="img-preview mx-auto shadow roundend" style="background-image: url({{$image->temporaryUrl()}});"></div>
                 </div>
                 @endforeach
             </div>
-            <button type="button" class="btn btn-danger shadow d-block text-center mt-2 mx-auto" wire:click="removeImage({{$key}})">Cancella</button>
+            <button type="button" class="btn btn-danger shadow d-block text-center mt-3 mx-auto" wire:click="removeImage({{$key}})">Cancella</button>
         </div>
     </div>
     @endif
 
-    <div class="text-center mt-5">
+    <div class="text-center my-3">
         <button type="submit" class="btn btn-warning">{{__('ui.Annuncio')}}</button>
     </div>  
 </form>

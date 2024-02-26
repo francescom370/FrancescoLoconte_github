@@ -17,29 +17,11 @@
     <x-navbar></x-navbar>
    
     <x-header></x-header>
-
+    
         {{$slot}}
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
+    
     <x-footer></x-footer>
+    <script src="https://kit.fontawesome.com/e12bd83a7b.js" crossorigin="anonymous"></script>
     @livewireScripts
 </body>
 </html>
