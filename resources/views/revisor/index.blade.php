@@ -6,8 +6,6 @@
         </div>
     </div>
 </div>
-
-<div>
     @if($announcement_to_check)
     <div class="container">
         <div class="row">
@@ -45,38 +43,32 @@
                 </div>
             </div>
             <div class="col-4">
-        </div>
-    <h5 class="card-title">{{$announcement_to_check->title}}</h5>
-    <p class="card-text">Descrizione: {{$announcement_to_check->description}}</p>
-    <p class="card-text">Prezzo :{{$announcement_to_check->price}}€</p>
-
-
-
-    <div class="col-12">
-        <form action="{{route('revisor.accept_announcement',['announcement'=>$announcement_to_check])}}" method="POST">
-            @csrf
-            @method('PATCH')
-           <button type="submit" class="btn btn-primary">
-            Accetta
-           </button>
-        </form>
+                <div class="card" style="width: 25rem;">
+                    <div class="card-body">
+                        <h5 class="card-title font-title fs-3 bordi">{{$announcement_to_check->title}}</h5>
+                        <p class="card-text"><span class="fs-5">{{__('ui.Descrizione')}}:</span> {{$announcement_to_check->description}}</p>
+                        <p class="card-text"><span class="fs-5">{{__('ui.Prezzo')}}:</span> {{$announcement_to_check->price}}€</p>
+                        <p class="card-text"><span class="fs-5">{{__('ui.Categoria')}}:</span> {{$announcement_to_check->category->name}}</p>
+                        <p class="card-text"><span class="fs-5">{{__('ui.Data')}}:</span> {{$announcement_to_check->created_at->format('d/m/Y')}}</p>
+                        <!-- <p class="card-text"><span class="fs-5">{{__('ui.Venditore')}}:</span> {{$announcement_to_check->name}}</p> -->
+                        <form action="{{route('revisor.accept_announcement',['announcement'=>$announcement_to_check])}}" method="POST">
+                             @csrf
+                             @method('PATCH')
+                            <button type="submit" class="btn btn-success my-2">
+                             Accetta
+                            </button>
+                        </form>                         
+                        <form action="{{route('revisor.reject_announcement',['announcement'=>$announcement_to_check])}}" method="POST">
+                            @csrf
+                            @method('PATCH')
+                            <button type="submit" class="btn btn-danger my-2 ">
+                            Rifiuta
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div> 
+        </div>        
     </div>
-
-        <form action="{{route('revisor.reject_announcement',['announcement'=>$announcement_to_check])}}" method="POST">
-                        @csrf
-                        @method('PATCH')
-                    <button type="submit" class="btn btn-primary">
-                    Rifiuta
-                    </button>
-                    </form>
-               
-            
-                </div>        
-            </div>
-            @endif
-               
-    </div>
-</div>
-
-    
+    @endif            
 </x-layout>

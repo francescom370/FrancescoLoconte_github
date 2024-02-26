@@ -44,10 +44,10 @@
                         <p class="card-text"><span class="fs-5">{{__('ui.Data')}}:</span> {{$announcement->created_at->format('d/m/Y')}}</p>
                         <!-- <p class="card-text"><span class="fs-5">{{__('ui.Venditore')}}:</span> {{$announcement->name}}</p> -->
                     </div>
-                </div>
             </div>
         </div>
     </div>
+</div>
 </x-layout>
 
 
