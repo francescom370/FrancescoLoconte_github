@@ -75,7 +75,7 @@ class CreateAnnouncement extends Component
     public function store()
 {
     $this->validate();
-    // $category = Category::find($this->category);
+    $category = Category::find($this->category);
     
    
     if ($category) {
@@ -101,9 +101,14 @@ class CreateAnnouncement extends Component
 
         // $this->announcement->user()->associate(Auth::user());
         $this->announcement->save();
-        session() -> flash('message', 'Articolo inserito con successo, sarà pubblicato dopo la reivisione');
+        // session() -> flash('message', 'Articolo inserito con successo, sarà pubblicato dopo la reivisione');
         $this->cleanForm();
+        return redirect(route("announcement.create"))->with('message', 'Annuncio creato con successo!');
+    }else {
+
+        return redirect()->back()->with('error', 'Categoria non valida!');
     }
+
 }
 
     public function cleanForm(){
