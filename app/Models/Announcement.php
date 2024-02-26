@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Models\User;
 use App\Models\Image;
 use App\Models\Category;
 use Laravel\Scout\Searchable;
@@ -51,4 +52,8 @@ class Announcement extends Model
     {
         return $this->hasMany(Image::class);
     }
+
+    // public function user(){
+    //     return $this->belongsTo(User::class);
+    // }
 }

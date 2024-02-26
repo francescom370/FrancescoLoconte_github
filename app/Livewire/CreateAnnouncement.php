@@ -25,18 +25,19 @@ class CreateAnnouncement extends Component
     public $price = '';
     // #[Validate] 
     public $description = '';
-    #[Validate] public $images = [];
-    #[Validate] public $temporary_images;
+    public $images = [];
+    public $temporary_images;
+    public $announcement; 
 
 
     protected $rules = 
     [
         'title'=> "required|min:4",
         'price'=> "required|numeric",
-        'description'=> "required|min:4",
+        'description'=>"required|min:4",
         'category'=>"required",
-        'images' => "required|max:1024",
-        'temporary_images' => 'required|max:1024',
+        'images.*' => "image|max:1024",
+        'temporary_images.*' =>'image|max:1024',
         
     ];
 
@@ -52,8 +53,6 @@ class CreateAnnouncement extends Component
         // 'category.required'=>'Il campo è obbligatorio',
         'temporary_images.max:1024' => 'L\'immagine dev\'essere massimo di 1 mb',
         'images.max:1024' => 'L\'immagine dev\'essere massimo di 1 mb',
-        'images.required' => 'L\'immagine è obbligatoria',
-        'temporary_images.required' => 'L\'immagine è obbligatoria',
     ];
 
 
@@ -76,16 +75,10 @@ class CreateAnnouncement extends Component
     public function store()
 {
     $this->validate();
-    $category = Category::find($this->category);
+    // $category = Category::find($this->category);
     
    
-    if ($category) {
-        $category->announcements()->create([
-            'title' => $this->title,
-            'price' => $this->price,
-            'description' => $this->description,
-        ]);
-
+   
         $this->announcement = Category::find($this->category)->announcements()->create($this->validate());
         if(count($this->images)){
             foreach($this->images as $image) {
@@ -96,25 +89,16 @@ class CreateAnnouncement extends Component
             }
 
             // File::deleteDirectory(storage_path('app/livewire-tmp'));
-            File::deleteDirectory(storage_path('app/livewire-tmp'));
-        }
+            File::deleteDirectory(storage_path('/app/livewire-tmp'));
+        
+        } 
 
         // $this->announcement->user()->associate(Auth::user());
         $this->announcement->save();
-        // session() -> flash('message', 'Articolo inserito con successo, sarà pubblicato dopo la reivisione');
-        
+        session() -> flash('message', 'Articolo inserito con successo, sarà pubblicato dopo la reivisione');
         $this->cleanForm();
-        return redirect(route("announcement.create"))->with('message', 'Annuncio creato con successo!');
-    } else {
-       
-        return redirect()->back()->with('error', 'Categoria non valida!');
-    }
-
-
-    
 
 }
-
 
     public function cleanForm(){
         $this->title = "";
@@ -142,10 +126,10 @@ class CreateAnnouncement extends Component
         
     }
 
-    public function save()
-    {
-        $this->photo->store(path:'photos');
-    }
+    // public function save()
+    // {
+    //     $this->photo->store(path:'photos');
+    // }
 
     // public function storeWithImages()
     // {

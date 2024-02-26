@@ -48,8 +48,8 @@
     </div>
 
     <div class="mb-3 my-3">
-        <input wire:model="temporary_images" type="file" name="images" multiple class="form-control shadow @error('temporary_images') is-invalid @enderror" placeholder="Img"/>
-        @error('temporary_images')
+        <input wire:model="temporary_images" type="file" name="images" multiple class="form-control shadow @error('temporary_images.*') is-invalid @enderror" placeholder="Img"/>
+        @error('temporary_images.*')
            <p class="text-danger mt-5">{{$message}}</p>
         @enderror
     </div>
@@ -61,7 +61,7 @@
             <div class="row border border-4 border-info roundend shadow py-4">
                 @foreach ($images as $key => $image)
                 <div class="col-12 my-3"> 
-                    <div class="img-preview mx-auto shadow roundend" style="background-image: url({{$image->temporaryUrl()}})"></div>
+                    <div class="img-preview mx-auto shadow roundend" style="background-image: url({{$image->temporaryUrl()}});"></div>
                 </div>
                 @endforeach
             </div>

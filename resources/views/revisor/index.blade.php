@@ -1,8 +1,8 @@
 <x-layout>
-<div class="container-fluid p-5 bg-gradient bg-success shadow mb-5">
+<div class="container my-5">
     <div class="row">
-        <div class="col-12 text-light p-5">
-            <h1 class="display-2">{{$announcement_to_check ? 'ecco l\'annuncio da rivisionare' : 'non ci sono annunci'}}</h1>
+        <div class="col-12 bordi">
+            <h1 class="display-1 font-title text-center">{{$announcement_to_check ? 'Ecco l\'annuncio da rivisionare' : 'Non ci sono annunci'}}</h1>
         </div>
     </div>
 </div>
@@ -11,7 +11,7 @@
     @if($announcement_to_check)
     <div class="container">
         <div class="row">
-            <div class="col-12">
+            <div class="col-8">
                 <div id="ShowCarousel" class="carousel slide carosellopreview" data-bs-ride="carousel">
                     @if ($announcement_to_check-> images)
                     <div class="carousel-inner">
@@ -44,15 +44,7 @@
                     </button>
                 </div>
             </div>
-        </div>
-    </div>
-</div>
-
-
-
-<div class="container">
-    <div class="row">
-        <div class="col-12">
+            <div class="col-4">
         </div>
     <h5 class="card-title">{{$announcement_to_check->title}}</h5>
     <p class="card-text">Descrizione: {{$announcement_to_check->description}}</p>
@@ -78,22 +70,13 @@
                     </button>
                     </form>
                
+            
+                </div>        
             </div>
             @endif
-        </div>
+               
     </div>
+</div>
 
     
-
-
-
-
-
-
-
-
-
-
-
-
 </x-layout>
