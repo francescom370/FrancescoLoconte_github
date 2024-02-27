@@ -10,9 +10,9 @@ use Illuminate\Support\Facades\Storage;
 
 class Image extends Model
 {
-
+   
     use HasFactory;
-
+    protected $casts=['labels'=>'array'];
     protected $fillable = ['path'];
     public function announcement():BelongsTo
     {

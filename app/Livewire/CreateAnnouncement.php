@@ -2,6 +2,8 @@
 
 namespace App\Livewire;
 
+use App\Jobs\GoogleVisionLabelImage;
+use App\Jobs\GoogleVisionSafeSearch;
 use Livewire\Component;
 use App\Models\Category;
 use App\Jobs\ResizeImage;
@@ -60,17 +62,7 @@ class CreateAnnouncement extends Component
         $this->validateOnly($propertyName);
     }
     
-    // public function store()
-    // {
-    //     $category= Category::find($this->category);
-    //     $category->announcements()->create([
-    //         'title'=>$this->title,
-    //         'price'=>$this->price,
-    //         'description'=>$this->description,
-    //     ]);
-    //     $this->cleanForm();
-    //     return redirect(route("announcement.create"))->with('message', 'Annuncio creato con successo!');
-    // }
+   
     
     public function store()
 {
@@ -79,29 +71,26 @@ class CreateAnnouncement extends Component
     
    
     if ($category) {
-        // $category->announcements()->create([
-        //     'title' => $this->title,
-        //     'price' => $this->price,
-        //     'description' => $this->description,
-        // ]);
+       
 
         $this->announcement = Category::find($this->category)->announcements()->create($this->validate());
         if(count($this->images)){
             foreach($this->images as $image) {
-                // $this->announcement->images()->create(['path' => $image->store('images', 'public')]);
+           
                 $newFileName = "announcements/{$this->announcement->id}";
                 $newImage = $this->announcement->images()->create(['path' => $image->store($newFileName , 'public')]);
                 dispatch(new ResizeImage($newImage->path, 400, 300));
+                dispatch(new GoogleVisionSafeSearch($newImage->id));
+                dispatch(new GoogleVisionLabelImage($newImage->id));
             }
 
-            // File::deleteDirectory(storage_path('app/livewire-tmp'));
             File::deleteDirectory(storage_path('/app/livewire-tmp'));
         
         } 
 
-        // $this->announcement->user()->associate(Auth::user());
+     
         $this->announcement->save();
-        // session() -> flash('message', 'Articolo inserito con successo, sarà pubblicato dopo la reivisione');
+
         $this->cleanForm();
         return redirect(route("announcement.create"))->with('message', 'Annuncio creato con successo!');
     }else {
@@ -136,28 +125,7 @@ class CreateAnnouncement extends Component
         }
         
     }
-
-    // public function save()
-    // {
-    //     $this->photo->store(path:'photos');
-    // }
-
-    // public function storeWithImages()
-    // {
-    //     $this->validate();
-
-    //     $this->announcement = Category::find($this->category)->announcements()->create($this->validate());
-    //     if(count($this->images)){
-    //         foreach($this->images as $image) {
-    //             $this->announcement->images()->create(['path' => $image->store('images', 'public')]);
-    //         }
-    //     }
-
-    //     session() -> flash('message', 'Articolo inserito con successo, sarà pubblicato dopo la reivisione');
-    //     $this->cleanForm();
-    // }
     
-
     public function render()
     {
         return view('livewire.create-announcement');
