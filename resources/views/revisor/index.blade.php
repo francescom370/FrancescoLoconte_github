@@ -52,24 +52,26 @@
                         <p class="card-text"><span class="fs-5">{{__('ui.Prezzo')}}:</span> {{$announcement_to_check->price}}€</p>
                         <p class="card-text"><span class="fs-5">{{__('ui.Categoria')}}:</span> {{$announcement_to_check->category->name}}</p>
                         <p class="card-text"><span class="fs-5">{{__('ui.Data')}}:</span> {{$announcement_to_check->created_at->format('d/m/Y')}}</p>
-                        <form action="{{route('revisor.accept_announcement',['announcement'=>$announcement_to_check])}}" method="POST">
-                             @csrf
-                             @method('PATCH')
-                            <button type="submit" class="btn btn-success my-2">
-                             Accetta
-                            </button>
-                        </form>                         
-                        <form action="{{route('revisor.reject_announcement',['announcement'=>$announcement_to_check])}}" method="POST">
-                            @csrf
-                            @method('PATCH')
-                            <button type="submit" class="btn btn-danger my-2 ">
-                            Rifiuta
-                            </button>
-                        </form>
+                        <div class="d-flex justify-content-between">
+                            <form action="{{route('revisor.reject_announcement',['announcement'=>$announcement_to_check])}}" method="POST" class="mr-2">
+                                @csrf
+                                @method('PATCH')
+                                <button type="submit" class="btn btn-danger my-2">
+                                    Rifiuta
+                                </button>
+                            </form>                           
+                            <form action="{{route('revisor.accept_announcement',['announcement'=>$announcement_to_check])}}" method="POST">
+                                @csrf
+                                @method('PATCH')
+                                <button type="submit" class="btn btn-success my-2">
+                                    Accetta
+                                </button>
+                             </form>
+                        </div>                         
                     </div>
                 </div>
-            </div> 
-        </div>        
-    </div>
+            </div>
+        </div> 
+    </div>        
     @endif            
 </x-layout>
