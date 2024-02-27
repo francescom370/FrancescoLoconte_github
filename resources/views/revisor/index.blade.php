@@ -52,23 +52,25 @@
                         <p class="card-text"><span class="fs-5">{{__('ui.Prezzo')}}:</span> {{$announcement_to_check->price}}€</p>
                         <p class="card-text"><span class="fs-5">{{__('ui.Categoria')}}:</span> {{$announcement_to_check->category->name}}</p>
                         <p class="card-text"><span class="fs-5">{{__('ui.Data')}}:</span> {{$announcement_to_check->created_at->format('d/m/Y')}}</p>
-
-                        
+                        <h5 class="font-title">Tags:</h5>
                         @foreach ($announcement_to_check->images as $image)
-                        @if($image->labels)
-                             @foreach ($image->labels as $label)
-                             <p>{{$label}}</p>
-                            @endforeach
-                        @endif
-                        <h5>Tags</h5>
-                        <h5>Revisioni immagini</h5>
-                        <p>Adulti: <span class="{{$image->adult}}"></span></p>
-                        <p>Satira: <span class="{{$image->spoof}}"></span></p>
-                        <p>Medicina: <span class="{{$image->medical}}"></span></p>
-                        <p>Violenza: <span class="{{$image->violence}}"></span></p>
-                        <p>Contenuti ammiccanti: <span class="{{$image->racy}}"></span></p>
+                            @if($image->labels)
+                                @php
+                                    $labelString = implode(', ', $image->labels);
+                                @endphp
+                                <p>{{$labelString}}</p>
+                            @endif
                         @endforeach
-
+                        <h5 class="font-title">Revisioni immagini:</h5>
+                        @foreach ($announcement_to_check->images as $image)
+                            @if($image->labels)
+                            @endif
+                            <p>Adulti: <span class="{{$image->adult}}"></span></p>
+                            <p>Satira: <span class="{{$image->spoof}}"></span></p>
+                            <p>Medicina: <span class="{{$image->medical}}"></span></p>
+                            <p>Violenza: <span class="{{$image->violence}}"></span></p>
+                            <p>Contenuti ammiccanti: <span class="{{$image->racy}}"></span></p>
+                        @endforeach
                         <div class="d-flex justify-content-between">
                             <form action="{{route('revisor.reject_announcement',['announcement'=>$announcement_to_check])}}" method="POST" class="mr-2">
                                 @csrf
@@ -85,7 +87,6 @@
                                 </button>
                              </form>
                         </div>                         
-
                     </div>
                 </div>
             </div>

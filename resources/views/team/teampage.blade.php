@@ -1,5 +1,4 @@
 <x-teamlayout>
-
     <div class="container ContainerSpiegone">
         <div class="row justify-contnet-center">
             <div class="col-8">
