@@ -10,10 +10,10 @@
         <li class="social-icon__item"><a class="social-icon__link" target="_blank" href="https://www.facebook.com/">
             <ion-icon name="logo-facebook"></ion-icon>
           </a></li>
-        <li class="social-icon__item"><a class="social-icon__link" href="#">
+        <li class="social-icon__item"><a class="social-icon__link" href="https://www.twitter.com/">
             <ion-icon name="logo-twitter"></ion-icon>
           </a></li>
-        <li class="social-icon__item"><a class="social-icon__link" href="#">
+        <li class="social-icon__item"><a class="social-icon__link" href="https://www.linkedin.com/">
             <ion-icon name="logo-linkedin"></ion-icon>
           </a></li>
         <li class="social-icon__item"><a class="social-icon__link" target="_blank" href="https://www.instagram.com/">
@@ -23,8 +23,8 @@
       <ul class="menu">
         <li class="menu__item"><a class="menu__link" href="{{route('welcome')}}">Home</a></li>
         <!-- <li class="menu__item"><a class="menu__link" href="#">About</a></li>
-        <li class="menu__item"><a class="menu__link" href="#">Services</a></li>
-        <li class="menu__item"><a class="menu__link" href="#">Team</a></li> -->
+        <li class="menu__item"><a class="menu__link" href="#">Services</a></li> -->
+        <li class="menu__item"><a class="menu__link" href="{{route('page.team')}}">Team</a></li>
         <li class="menu__item"><a class="menu__link" href="{{route('revisor.register')}}">Lavora con noi</a></li>
       </ul>
       <p class="text-dark">&copy;2024 Codifica Coraggiosa | All Rights Reserved</p>

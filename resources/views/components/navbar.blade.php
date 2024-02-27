@@ -36,7 +36,7 @@
         
         @if (Auth::user()->is_revisor)
         <li class="nav-item">
-          <a class="nav-link active " aria-current="page" href="{{route('revisor.index')}}">{{__('ui.Revisore')}}<span class="position-absolute top-0 start-100 translate-middle badge-rounded-pill bg-danger rounded">
+          <a class="nav-link active " aria-current="page" href="{{route('revisor.index')}}">{{__('ui.Revisore')}}<span class="position-absolute top-0 start-100 translate-middle badge-rounded-pill rounded">
             {{App\Models\Announcement::toBeRevisionedCount()}}
             <span class="visually-hidden">Messaggi da leggere</span>
           </span>
@@ -62,21 +62,24 @@
           </button>
         </div>
       </form>
-    
-      
-      
-    </ul>
-    <ul class="navbar-nav">
-
-    <li class="nav-item">
-      <x-_locale lang="it"/>
-    </li>
-    <li class="nav-item">
-      <x-_locale lang="en"/>
-    </li>
-    <li class="nav-item">
-      <x-_locale lang="es"/>
-    </li>  
+     </ul>
+      <ul class="navbar-nav">
+        <div class="dropdown">
+          <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <i class="fa-solid fa-earth-europe"></i>
+          </button>
+            <ul class="dropdown-menu">
+              <li class="nav-item">
+                <x-_locale lang="it"/>
+              </li>
+              <li class="nav-item">
+                <x-_locale lang="en"/>
+              </li>
+              <li class="nav-item">
+                <x-_locale lang="es"/>
+              </li> 
+           </ul>
+        </div> 
       @guest
       
       <li class="nav-item">

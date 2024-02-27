@@ -13,7 +13,7 @@ class FrontController extends Controller
         return view('welcome', compact('announcements') );
     }
 
-
+  
 
   public function categoryShow(Category $category){
 
@@ -29,5 +29,11 @@ class FrontController extends Controller
     public function setLanguage($lang){
       session()->put('locale', $lang);
       return redirect()->back();
+    }
+
+    //funzione per pagina team
+
+    public function pageTeam(){
+      return view('team.teampage');
     }
   }

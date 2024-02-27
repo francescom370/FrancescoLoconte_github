@@ -43,7 +43,8 @@ Route::post('/richiesta/revisore',[RevisorController::class,'becomeRevisor'])->m
 Route::get('/rendi/revisore/{user}',[RevisorController::class,'makeRevisor'])->name('make.revisor');
 // rotta per ricerca
 Route::get('/ricerca/annuncio',[FrontController::class,'searchAnnouncements'])->name('announcements.search');
-
 //Cambio lingua
 Route::post('/lingua/{lang}', [FrontController::class, 'setLanguage'])->name('setLocale');
+//Rotta per la pagina Team
+Route::get('/page/team',[FrontController::class, 'pageTeam'])->name('page.team');
 
