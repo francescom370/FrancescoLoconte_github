@@ -14,13 +14,13 @@ use Google\Cloud\Vision\V1\ImageAnnotatorClient;
 class GoogleVisionSafeSearch implements ShouldQueue
 {
     use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
-    private $annuncement_image_id;
+    private $announcement_image_id;
     /**
      * Create a new job instance.
      */
-    public function __construct($annuncement_image_id)
+    public function __construct($announcement_image_id)
     {
-        $this->annuncement_image_id = $annuncement_image_id;
+        $this->announcement_image_id = $announcement_image_id;
     }
 
     /**
@@ -28,7 +28,7 @@ class GoogleVisionSafeSearch implements ShouldQueue
      */
     public function handle(): void
     {
-        $i=Image::find($this->annuncement_image_id);
+        $i=Image::find($this->announcement_image_id);
         if(!$i){
             return;
         }
