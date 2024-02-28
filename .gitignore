@@ -18,3 +18,5 @@ yarn-error.log
 /.vscode
 /storage/*.index
 google_credential.json
+/storage/*.index-shm
+/storage/*.index-wal

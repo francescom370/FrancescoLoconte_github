@@ -57,17 +57,17 @@
      </ul>
       <ul class="navbar-nav">
         <div class="dropdown">
-          <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <button class="btn dropdown-toggle  ms-5 me-2 mb-2 nav-link " type="button" data-bs-toggle="dropdown" aria-expanded="false">
           <i class="fa-solid fa-earth-europe"></i>
           </button>
             <ul class="dropdown-menu">
-              <li class="nav-item">
+              <li class="nav-item justify-content-center d-flex">
                 <x-_locale lang="it"/>
               </li>
-              <li class="nav-item">
+              <li class="nav-item  justify-content-center d-flex">
                 <x-_locale lang="en"/>
               </li>
-              <li class="nav-item">
+              <li class="nav-item  justify-content-center d-flex">
                 <x-_locale lang="es"/>
               </li> 
            </ul>
