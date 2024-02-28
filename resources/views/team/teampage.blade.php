@@ -3,14 +3,15 @@
         <div class="row justify-contnet-center">
             <div class="col-8">
                 <h1 class="text-center display-1 bordi my-5 font-title">Chi siamo</h1>
-                <h3 class="text-center">Codifica Coraggiosa è un team di sviluppatori web che non si accontenta di fare le cose per bene, ma le fa coraggiosamente. Il nostro segreto? Unire la passione per il codice alla simpatia di tre pugliesi,un romano e un siciliano (non è una barzelletta). Il team è formato da appassionati di siti e applicazioni web, che sanno come rendere i progetti unici e originali. Che tu abbia bisogno di un sito vetrina, di un e-commerce, di un blog o di un'app mobile, Codifica Corggiosa ha la soluzione che fa per te. Il team offre anche assistenza e consulenza, per farti sentire sempre coccolato e supportato. Codifica Coraggiosa è il team che ti fa dire: "Wow, che bello e che coraggio!"</h3>
+                <h3 class="text-center">Presto.it è un innovativo sito di e-commerce specializzato nella vendita di prodotti tech all'avanguardia. Con una vasta gamma di articoli, dai dispositivi elettronici di ultima generazione agli accessori tecnologici, Presto.it si impegna a offrire ai clienti la migliore esperienza di shopping online. La piattaforma vanta una navigazione user-friendly, descrizioni dettagliate dei prodotti  Presto.it si posiziona come la destinazione ideale per gli amanti della tecnologia alla ricerca di prodotti affidabili e all'avanguardia.</h3>
+                <!-- <h3 class="text-center">Codifica Coraggiosa è un team di sviluppatori web che non si accontenta di fare le cose per bene, ma le fa coraggiosamente. Il nostro segreto? Unire la passione per il codice alla simpatia di tre pugliesi,un romano e un siciliano (non è una barzelletta). Il team è formato da appassionati di siti e applicazioni web, che sanno come rendere i progetti unici e originali. Che tu abbia bisogno di un sito vetrina, di un e-commerce, di un blog o di un'app mobile, Codifica Corggiosa ha la soluzione che fa per te. Il team offre anche assistenza e consulenza, per farti sentire sempre coccolato e supportato. Codifica Coraggiosa è il team che ti fa dire: "Wow, che bello e che coraggio!"</h3> -->
             </div>
             <div class="col-4">
-                <img class="logoTeam" src="{{ asset('storage/img/logominimal.png') }}" alt="logoCodificaCoraggiosa"> 
+                <img class="logoTeam" src="{{ asset('storage/img/imgnav.png') }}" alt="logoCodificaCoraggiosa"> 
             </div>
         </div>
     </div>
-    <div class="container">
+    <!-- <div class="container">
         <div class="row">
             <div class="col-12">            
                 <h1 class="text-center display-1 bordi my-5 font-title">Team</h1>
@@ -43,7 +44,7 @@
                     </div>
             </div>
         </div>
-    </div>
+    </div> -->
 </x-teamlayout>
 
 
