@@ -46,5 +46,10 @@ return [
 
     //HEADER
     'Benvenuti' => "Welcome to Presto.it",
-    'Header' => "Discover the most innovative and fun products on the market."
+    'Header' => "Discover the most innovative and fun products on the market.",
+
+    //REVISORE
+    'AnnunciDaRevisionare' => "Ads to be reviewed",
+    'NonCiSonoAnnunci' => "There are no ads",
+
 ];

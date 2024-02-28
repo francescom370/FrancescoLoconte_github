@@ -9,10 +9,8 @@
     </div>
     <div class="container">
         <div class="row">
-            <div class="col-8">
-                <div class="row">
                     @forelse($announcements as $announcement)                    
-                    <div class="col-12 col-md-4 my-4 ">
+                    <div class="col-12 col-md-6 col-lg-4 my-3 d-flex justify-content-center">
                         <div class="card cardCustom">
                         <img src="{{!$announcement->images()->get()->isEmpty() ? $announcement->images()->first()->getUrl(400, 300) : 'https:://picsum.photos/200'}}" class="card-img-top" alt="...">
                             <div class="card-body">
@@ -33,8 +31,6 @@
                         <p>{{__('ui.Pubblicane')}} <a href="{{route('announcement.create')}}" class="btn btn-warning">{{__('ui.NuovoAn')}}</a></p>
                     </div>
                     @endforelse
-                </div>
-            </div>
         </div>
     </div> 
 </x-layout>

@@ -2,7 +2,7 @@
     <div class="container my-5 bordi">
         <div class="row">
             <div class="col-12">
-                <h1 class="display-1 text-center font-title">{{$announcement_to_check ? 'Ecco l\'annuncio da rivisionare' : 'Non ci sono annunci'}}</h1>
+                <h1 class="display-1 text-center font-title">{{$announcement_to_check ? __('ui.AnnunciDaRevisionare') : __('ui.NonCiSonoAnnunci') }}</h1>
             </div>
         </div>
     </div>

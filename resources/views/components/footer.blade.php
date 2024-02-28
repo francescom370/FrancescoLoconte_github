@@ -22,8 +22,6 @@
       </ul>
       <ul class="menu">
         <li class="menu__item"><a class="menu__link" href="{{route('welcome')}}">Home</a></li>
-        <!-- <li class="menu__item"><a class="menu__link" href="#">About</a></li>
-        <li class="menu__item"><a class="menu__link" href="#">Services</a></li> -->
         <li class="menu__item"><a class="menu__link" href="{{route('page.team')}}">Team</a></li>
         <li class="menu__item"><a class="menu__link" href="{{route('revisor.register')}}">Lavora con noi</a></li>
       </ul>

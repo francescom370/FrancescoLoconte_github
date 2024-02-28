@@ -11,6 +11,7 @@
             </div>
         </div>
     </div>
+
     <form action="{{route('become.revisor')}}" method="POST">
                 @csrf
                 <div class="contenitore-form-reg">
@@ -19,9 +20,9 @@
                             <div class="brand-title font-title">Presto.it</div>
                             <div class="inputs-log">
                                     <label class="my-2 lable-log font-title">Email</label>
-                                    <input class="input-log" type="email" name="email" placeholder="Presto@test.com" />
+                                    <input class="input-log" type="email" name="email" value="{{ auth()->check() ? auth()->user()->email : '' }}"/>
                                     <label class="my-2 lable-log font-title">Nome e cognome</label>
-                                    <input class="input-log" type="text" name="name" placeholder="Mario Rossi" />
+                                    <input class="input-log" type="text" name="name" value="{{ auth()->check() ? auth()->user()->name : '' }}" />
                                     <button class="button-log font-title" type="submit">Diventa Revisionatore</button>
                             </div>
                     </div>

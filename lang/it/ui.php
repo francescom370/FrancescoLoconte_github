@@ -50,4 +50,8 @@ return [
 
     'Benvenuti' => 'Benvenuti in Presto.it',
 
+     //REVISORE
+     'AnnunciDaRevisionare' => "Annunci da revisionare",
+     'NonCiSonoAnnunci' => "Non ci sono annunci",
+
 ];

@@ -45,5 +45,9 @@ return [
 
     //HEADER
     'Benvenuti' => 'Bienvenido a Presto.it',
-    'Header' => 'Descubre los productos más innovadores y divertidos del mercado.'
+    'Header' => 'Descubre los productos más innovadores y divertidos del mercado.',
+
+     //REVISORE
+     'AnnunciDaRevisionare' => "Anuncios a revisar",
+     'NonCiSonoAnnunci' => "No hay anuncios",
 ];
